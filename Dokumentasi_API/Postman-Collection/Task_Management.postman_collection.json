@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "2c17844b-c072-4543-a39a-81ec735ccf4f",
+		"name": "Task_Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24060862"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "ADD TASK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "The basics of art",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Learn and analyze the basics in art",
+									"type": "text"
+								},
+								{
+									"key": "finish_date",
+									"value": "202211",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Finish",
+									"type": "text"
+								},
+								{
+									"key": "doc_url",
+									"type": "file",
+									"src": "/E:/New folder/The basics of art.docx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task"
+							]
+						},
+						"description": "Menambahkan Data baru ke dalam tabel Task menggunakan API"
+					},
+					"response": [
+						{
+							"name": "Add Task Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "The basics of art",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Learn and analyze the basics in art",
+											"type": "text"
+										},
+										{
+											"key": "finish_date",
+											"value": "202211",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Finish",
+											"type": "text"
+										},
+										{
+											"key": "doc_url",
+											"type": "file",
+											"src": "/E:/New folder/The basics of art.docx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 04:37:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success insert to database\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET ALL TASK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task"
+							]
+						},
+						"description": "Mengambil semua data di dalam tabel Task"
+					},
+					"response": [
+						{
+							"name": "All Task Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 04:43:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2563"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"category_id\": \"1\",\n            \"title\": \"Using loops in PHP programs\",\n            \"description\": \"Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .\",\n            \"start_date\": \"2022-10-27\",\n            \"finish_date\": \"2022-10-29\",\n            \"status\": \"Finish\",\n            \"doc_url\": \"Odd_Even_UsingLoop.php\"\n        },\n        {\n            \"id\": \"2\",\n            \"category_id\": \"2\",\n            \"title\": \"Finding the area of Mr. udin's garden\",\n            \"description\": \"Mr. Udin has a rectangular garden. The length of the garden is 1 3/4 times the width of the garden. The width of Mr. Udin's garden is 20 m. What is the area of ​​Mr. Udin's garden​\",\n            \"start_date\": \"2022-10-28\",\n            \"finish_date\": \"2022-10-31\",\n            \"status\": \"On progress\",\n            \"doc_url\": \"Finding the area of Mr. udin's garden.docx\"\n        },\n        {\n            \"id\": \"14\",\n            \"category_id\": \"6\",\n            \"title\": \"Find the mass of the object \",\n            \"description\": \"A certain force produces an acceleration of 5m/s2 on a standard object. If the same force is applied to the second object, it produces an acceleration of 15m/s2 . what is the mass of the second object, and what is the magnitude of the force?\",\n            \"start_date\": \"2022-10-28\",\n            \"finish_date\": \"2022-11-01\",\n            \"status\": \"New\",\n            \"doc_url\": \"Find the mass of the object.docx\"\n        },\n        {\n            \"id\": \"15\",\n            \"category_id\": \"3\",\n            \"title\": \"Final Exam History\",\n            \"description\": \"Doing all the questions that have been tested in history subjects\",\n            \"start_date\": \"2022-10-29\",\n            \"finish_date\": \"2022-10-30\",\n            \"status\": \"Finish\",\n            \"doc_url\": \"Final Exam History.docx\"\n        },\n        {\n            \"id\": \"17\",\n            \"category_id\": \"1\",\n            \"title\": \"Simple Array Sum\",\n            \"description\": \"Find the sum of array\",\n            \"start_date\": \"2022-10-30\",\n            \"finish_date\": \"2022-10-31\",\n            \"status\": \"New\",\n            \"doc_url\": \"Simple_Array_Sum1.docx\"\n        },\n        {\n            \"id\": \"19\",\n            \"category_id\": \"7\",\n            \"title\": \"Biology assigment 2\",\n            \"description\": \"Answer questions about biology \",\n            \"start_date\": \"2022-10-30\",\n            \"finish_date\": \"2022-11-04\",\n            \"status\": \"Finish\",\n            \"doc_url\": \"Biology_Assignment_2.docx\"\n        },\n        {\n            \"id\": \"20\",\n            \"category_id\": \"6\",\n            \"title\": \"Physics Assignment 2\",\n            \"description\": \"Answer questions about quantum mechanics\",\n            \"start_date\": \"2022-10-30\",\n            \"finish_date\": \"2022-11-01\",\n            \"status\": \"Finish\",\n            \"doc_url\": \"Mechanic_Quantum_assigment_2.docx\"\n        },\n        {\n            \"id\": \"23\",\n            \"category_id\": \"5\",\n            \"title\": \"The basics of art\",\n            \"description\": \"Learn and analyze the basics in art\",\n            \"start_date\": \"2022-10-31\",\n            \"finish_date\": \"2022-11-01\",\n            \"status\": \"Finish\",\n            \"doc_url\": \"The_basics_of_art.docx\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET DETAIL TASK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Menampilkan data berdasarkan id"
+					},
+					"response": [
+						{
+							"name": "Detail Task Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:17:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "593"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"1\",\n        \"category_id\": \"1\",\n        \"title\": \"Using loops in PHP programs\",\n        \"description\": \"Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .\",\n        \"start_date\": \"2022-10-27\",\n        \"finish_date\": \"2022-10-29\",\n        \"status\": \"Finish\",\n        \"doc_url\": \"Odd_Even_UsingLoop.php\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE TASK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "The basics of art",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Learn more about art",
+									"type": "text"
+								},
+								{
+									"key": "finish_date",
+									"value": "202211",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Finish",
+									"type": "text"
+								},
+								{
+									"key": "doc_url",
+									"type": "file",
+									"src": "/E:/New folder/More about art.docx"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task"
+							]
+						},
+						"description": "Mengupdate data, disini memang terlihat seperti menggunakan method post tetapi pada bagian params bisa di manipulasi untuk tetap menggunakan method put yaitu dengan cara **_method PUT. Alasan menggunakan method post pada awalnya adalah karena pada method put tidak bisa digunakan untuk form-data**"
+					},
+					"response": [
+						{
+							"name": "Update Task Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "The basics of art",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Learn more about art",
+											"type": "text"
+										},
+										{
+											"key": "finish_date",
+											"value": "202211",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Finish",
+											"type": "text"
+										},
+										{
+											"key": "doc_url",
+											"type": "file",
+											"src": "/E:/New folder/More about art.docx"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "23",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:28:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success update row\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE TASK",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task"
+							]
+						},
+						"description": "Menghapus Task berdasarkan id"
+					},
+					"response": [
+						{
+							"name": "DELETE TASK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "23",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:38:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success to delete\"\n}"
+						}
+					]
+				}
+			],
+			"description": "TASK API"
+		},
+		{
+			"name": "Task Categories",
+			"item": [
+				{
+					"name": "ADD TASK CATEGORIES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Social",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task_Categories?name=Social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task_Categories"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Social"
+								}
+							]
+						},
+						"description": "Menambahkan Task Categories"
+					},
+					"response": [
+						{
+							"name": "ADD TASK CATEGORIES",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Social",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task_Categories?name=Social",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task_Categories"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Social"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:52:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success to insert database\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET ALL TASK CATEGORIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task_Categories"
+							]
+						},
+						"description": "Mengambil semua data Task Categories"
+					},
+					"response": [
+						{
+							"name": "GET ALL TASK CATEGORIES",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task_Categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:54:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Sucess\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Programming\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Math\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"History\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Geography\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Art\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"Physics\"\n        },\n        {\n            \"id\": \"7\",\n            \"name\": \"Biology\"\n        },\n        {\n            \"id\": \"10\",\n            \"name\": \"Social\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET DETAIL TASK CATEGORIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task_Categories?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task_Categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Mengambil Detail Task Categories berdasarkan Id"
+					},
+					"response": [
+						{
+							"name": "GET DETAIL TASK CATEGORIES",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task_Categories?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task_Categories"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:55:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Sucess\",\n    \"data\": {\n        \"id\": \"1\",\n        \"name\": \"Programming\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE TASK CATEGORIES",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Politics",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task_Categories"
+							]
+						},
+						"description": "Update Data Task Categories"
+					},
+					"response": [
+						{
+							"name": "UPDATE TASK CATEGORIES",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Politics",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task_Categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:56:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success to update\",\n    \"before update\": {\n        \"id\": \"10\",\n        \"name\": \"Social\"\n    },\n    \"after update\": {\n        \"id\": \"10\",\n        \"name\": \"Politics\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE TASK CATEGORIES",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Pertemuan_20_api",
+								"Task_Categories"
+							]
+						},
+						"description": "Hapus Data Categories"
+					},
+					"response": [
+						{
+							"name": "DELETE TASK CATEGORIES",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/Pertemuan_20_api/Task_Categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Pertemuan_20_api",
+										"Task_Categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Oct 2022 09:57:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success to delete \"\n}"
+						}
+					]
+				}
+			],
+			"description": "TASK CATEGORIES"
+		}
+	]
+}

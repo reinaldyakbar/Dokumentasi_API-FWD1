@@ -1,0 +1,825 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Task_Management
+  contact: {}
+host: localhost
+basePath: /Pertemuan_20_api
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /Task:
+    post:
+      description: Menambahkan Data baru ke dalam tabel Task menggunakan API
+      summary: ADD TASK
+      tags:
+      - Task
+      operationId: ADDTASK
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: category_id
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: title
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: description
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: finish_date
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: status
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: doc_url
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AddTaskExample'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Success insert to database
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 04:37:07 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '54'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+    get:
+      description: Mengambil semua data di dalam tabel Task
+      summary: GET ALL TASK
+      tags:
+      - Task
+      operationId: GETALLTASK
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AllTaskExample'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Success
+              data:
+              - id: '1'
+                category_id: '1'
+                title: Using loops in PHP programs
+                description: 'Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .'
+                start_date: 2022-10-27
+                finish_date: 2022-10-29
+                status: Finish
+                doc_url: Odd_Even_UsingLoop.php
+              - id: '2'
+                category_id: '2'
+                title: Finding the area of Mr. udin's garden
+                description: Mr. Udin has a rectangular garden. The length of the garden is 1 3/4 times the width of the garden. The width of Mr. Udin's garden is 20 m. What is the area of ​​Mr. Udin's garden​
+                start_date: 2022-10-28
+                finish_date: 2022-10-31
+                status: On progress
+                doc_url: Finding the area of Mr. udin's garden.docx
+              - id: '14'
+                category_id: '6'
+                title: 'Find the mass of the object '
+                description: A certain force produces an acceleration of 5m/s2 on a standard object. If the same force is applied to the second object, it produces an acceleration of 15m/s2 . what is the mass of the second object, and what is the magnitude of the force?
+                start_date: 2022-10-28
+                finish_date: 2022-11-01
+                status: New
+                doc_url: Find the mass of the object.docx
+              - id: '15'
+                category_id: '3'
+                title: Final Exam History
+                description: Doing all the questions that have been tested in history subjects
+                start_date: 2022-10-29
+                finish_date: 2022-10-30
+                status: Finish
+                doc_url: Final Exam History.docx
+              - id: '17'
+                category_id: '1'
+                title: Simple Array Sum
+                description: Find the sum of array
+                start_date: 2022-10-30
+                finish_date: 2022-10-31
+                status: New
+                doc_url: Simple_Array_Sum1.docx
+              - id: '19'
+                category_id: '7'
+                title: Biology assigment 2
+                description: 'Answer questions about biology '
+                start_date: 2022-10-30
+                finish_date: 2022-11-04
+                status: Finish
+                doc_url: Biology_Assignment_2.docx
+              - id: '20'
+                category_id: '6'
+                title: Physics Assignment 2
+                description: Answer questions about quantum mechanics
+                start_date: 2022-10-30
+                finish_date: 2022-11-01
+                status: Finish
+                doc_url: Mechanic_Quantum_assigment_2.docx
+              - id: '23'
+                category_id: '5'
+                title: The basics of art
+                description: Learn and analyze the basics in art
+                start_date: 2022-10-31
+                finish_date: 2022-11-01
+                status: Finish
+                doc_url: The_basics_of_art.docx
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 04:43:38 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '2563'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+    delete:
+      description: Menghapus Task berdasarkan id
+      summary: DELETE TASK
+      tags:
+      - Task
+      operationId: DELETETASK
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DELETETASK'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Success to delete
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 09:38:14 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '45'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /Task_Categories:
+    post:
+      description: Menambahkan Task Categories
+      summary: ADD TASK CATEGORIES
+      tags:
+      - Task Categories
+      operationId: ADDTASKCATEGORIES
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ADDTASKCATEGORIES'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Success to insert database
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 09:52:09 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '54'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+    get:
+      description: Mengambil semua data Task Categories
+      summary: GET ALL TASK CATEGORIES
+      tags:
+      - Task Categories
+      operationId: GETALLTASKCATEGORIES
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GETALLTASKCATEGORIES'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Sucess
+              data:
+              - id: '1'
+                name: Programming
+              - id: '2'
+                name: Math
+              - id: '3'
+                name: History
+              - id: '4'
+                name: Geography
+              - id: '5'
+                name: Art
+              - id: '6'
+                name: Physics
+              - id: '7'
+                name: Biology
+              - id: '10'
+                name: Social
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 09:54:24 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '266'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+    put:
+      description: Update Data Task Categories
+      summary: UPDATE TASK CATEGORIES
+      tags:
+      - Task Categories
+      operationId: UPDATETASKCATEGORIES
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: name
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UPDATETASKCATEGORIES'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: Success to update
+              before update:
+                id: '10'
+                name: Social
+              after update:
+                id: '10'
+                name: Politics
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 09:56:51 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '134'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+    delete:
+      description: Hapus Data Categories
+      summary: DELETE TASK CATEGORIES
+      tags:
+      - Task Categories
+      operationId: DELETETASKCATEGORIES
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DELETETASKCATEGORIES'
+          examples:
+            application/json; charset=utf-8:
+              status: true
+              message: 'Success to delete '
+          headers:
+            Date:
+              type: string
+              default: Mon, 31 Oct 2022 09:57:40 GMT
+            Server:
+              type: string
+              default: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.15
+            Content-Length:
+              type: string
+              default: '46'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+definitions:
+  AddTaskExample:
+    title: AddTaskExample
+    example:
+      status: true
+      message: Success insert to database
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+    required:
+    - status
+    - message
+  AllTaskExample:
+    title: AllTaskExample
+    example:
+      status: true
+      message: Success
+      data:
+      - id: '1'
+        category_id: '1'
+        title: Using loops in PHP programs
+        description: 'Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .'
+        start_date: 2022-10-27
+        finish_date: 2022-10-29
+        status: Finish
+        doc_url: Odd_Even_UsingLoop.php
+      - id: '2'
+        category_id: '2'
+        title: Finding the area of Mr. udin's garden
+        description: Mr. Udin has a rectangular garden. The length of the garden is 1 3/4 times the width of the garden. The width of Mr. Udin's garden is 20 m. What is the area of ​​Mr. Udin's garden​
+        start_date: 2022-10-28
+        finish_date: 2022-10-31
+        status: On progress
+        doc_url: Finding the area of Mr. udin's garden.docx
+      - id: '14'
+        category_id: '6'
+        title: 'Find the mass of the object '
+        description: A certain force produces an acceleration of 5m/s2 on a standard object. If the same force is applied to the second object, it produces an acceleration of 15m/s2 . what is the mass of the second object, and what is the magnitude of the force?
+        start_date: 2022-10-28
+        finish_date: 2022-11-01
+        status: New
+        doc_url: Find the mass of the object.docx
+      - id: '15'
+        category_id: '3'
+        title: Final Exam History
+        description: Doing all the questions that have been tested in history subjects
+        start_date: 2022-10-29
+        finish_date: 2022-10-30
+        status: Finish
+        doc_url: Final Exam History.docx
+      - id: '17'
+        category_id: '1'
+        title: Simple Array Sum
+        description: Find the sum of array
+        start_date: 2022-10-30
+        finish_date: 2022-10-31
+        status: New
+        doc_url: Simple_Array_Sum1.docx
+      - id: '19'
+        category_id: '7'
+        title: Biology assigment 2
+        description: 'Answer questions about biology '
+        start_date: 2022-10-30
+        finish_date: 2022-11-04
+        status: Finish
+        doc_url: Biology_Assignment_2.docx
+      - id: '20'
+        category_id: '6'
+        title: Physics Assignment 2
+        description: Answer questions about quantum mechanics
+        start_date: 2022-10-30
+        finish_date: 2022-11-01
+        status: Finish
+        doc_url: Mechanic_Quantum_assigment_2.docx
+      - id: '23'
+        category_id: '5'
+        title: The basics of art
+        description: Learn and analyze the basics in art
+        start_date: 2022-10-31
+        finish_date: 2022-11-01
+        status: Finish
+        doc_url: The_basics_of_art.docx
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum'
+    required:
+    - status
+    - message
+    - data
+  Datum:
+    title: Datum
+    example:
+      id: '1'
+      category_id: '1'
+      title: Using loops in PHP programs
+      description: 'Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .'
+      start_date: 2022-10-27
+      finish_date: 2022-10-29
+      status: Finish
+      doc_url: Odd_Even_UsingLoop.php
+    type: object
+    properties:
+      id:
+        type: string
+      category_id:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      start_date:
+        type: string
+      finish_date:
+        type: string
+      status:
+        type: string
+      doc_url:
+        type: string
+    required:
+    - id
+    - category_id
+    - title
+    - description
+    - start_date
+    - finish_date
+    - status
+    - doc_url
+  DetailTaskExample:
+    title: DetailTaskExample
+    example:
+      status: true
+      message: Success
+      data:
+        id: '1'
+        category_id: '1'
+        title: Using loops in PHP programs
+        description: 'Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .'
+        start_date: 2022-10-27
+        finish_date: 2022-10-29
+        status: Finish
+        doc_url: Odd_Even_UsingLoop.php
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+      data:
+        $ref: '#/definitions/Data'
+    required:
+    - status
+    - message
+    - data
+  Data:
+    title: Data
+    example:
+      id: '1'
+      category_id: '1'
+      title: Using loops in PHP programs
+      description: 'Create a loop program to complete a case study looking for odd and even numbers, then add up the total odd and even numbers with the input parameter being n and the loop starting from 1, for example, n : 10, it can be concluded that the odd number is 1,3, 5,7,9 and the even numbers are 2,4,6,8. So the total of each odd number is 25 and the even number is 20 .'
+      start_date: 2022-10-27
+      finish_date: 2022-10-29
+      status: Finish
+      doc_url: Odd_Even_UsingLoop.php
+    type: object
+    properties:
+      id:
+        type: string
+      category_id:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      start_date:
+        type: string
+      finish_date:
+        type: string
+      status:
+        type: string
+      doc_url:
+        type: string
+    required:
+    - id
+    - category_id
+    - title
+    - description
+    - start_date
+    - finish_date
+    - status
+    - doc_url
+  UpdateTaskExample:
+    title: UpdateTaskExample
+    example:
+      status: true
+      message: Success update row
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+    required:
+    - status
+    - message
+  DELETETASK:
+    title: DELETETASK
+    example:
+      status: true
+      message: Success to delete
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+    required:
+    - status
+    - message
+  ADDTASKCATEGORIES:
+    title: ADDTASKCATEGORIES
+    example:
+      status: true
+      message: Success to insert database
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+    required:
+    - status
+    - message
+  GETALLTASKCATEGORIES:
+    title: GETALLTASKCATEGORIES
+    example:
+      status: true
+      message: Sucess
+      data:
+      - id: '1'
+        name: Programming
+      - id: '2'
+        name: Math
+      - id: '3'
+        name: History
+      - id: '4'
+        name: Geography
+      - id: '5'
+        name: Art
+      - id: '6'
+        name: Physics
+      - id: '7'
+        name: Biology
+      - id: '10'
+        name: Social
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data1'
+    required:
+    - status
+    - message
+    - data
+  Data1:
+    title: Data1
+    example:
+      id: '1'
+      name: Programming
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    required:
+    - id
+    - name
+  GETDETAILTASKCATEGORIES:
+    title: GETDETAILTASKCATEGORIES
+    example:
+      status: true
+      message: Sucess
+      data:
+        id: '1'
+        name: Programming
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+      data:
+        $ref: '#/definitions/Data1'
+    required:
+    - status
+    - message
+    - data
+  UPDATETASKCATEGORIES:
+    title: UPDATETASKCATEGORIES
+    example:
+      status: true
+      message: Success to update
+      before update:
+        id: '10'
+        name: Social
+      after update:
+        id: '10'
+        name: Politics
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+      before update:
+        $ref: '#/definitions/BeforeUpdate'
+      after update:
+        $ref: '#/definitions/AfterUpdate'
+    required:
+    - status
+    - message
+    - before update
+    - after update
+  BeforeUpdate:
+    title: BeforeUpdate
+    example:
+      id: '10'
+      name: Social
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    required:
+    - id
+    - name
+  AfterUpdate:
+    title: AfterUpdate
+    example:
+      id: '10'
+      name: Politics
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    required:
+    - id
+    - name
+  DELETETASKCATEGORIES:
+    title: DELETETASKCATEGORIES
+    example:
+      status: true
+      message: 'Success to delete '
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string
+    required:
+    - status
+    - message
+tags:
+- name: Task
+  description: TASK API
+- name: Task Categories
+  description: TASK CATEGORIES
